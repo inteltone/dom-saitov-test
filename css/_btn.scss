@@ -1,0 +1,35 @@
+.btn{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: .8rem;
+	color: white;
+	padding: 1.6rem;
+	background-color: var(--clr-accent);
+	font-family: inherit;
+	font-size: 2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-radius: 100vw;
+	transition: background-color var(--tr);
+	&:hover,&:focus-visible{
+		background-color: var(--clr-hover);
+	}
+	&:active{
+		background-color: var(--clr-active);
+	}
+	&.disabled{
+		color: #E1E9ED;
+		background-color: var(--clr-disabled);
+		i{
+			opacity: .55;
+		}
+		pointer-events: none;
+	}
+	&--add{
+		padding-inline: 3.6rem;
+		color: #fff;
+		font-weight: 600;
+		text-align: center;
+	}
+}

@@ -1,0 +1,48 @@
+.pagination{	
+	display: flex;
+	justify-content: center;
+	gap: 1.8rem;
+	a{
+		--s: 5.2rem;
+		display: grid;
+		place-items: center;
+		inline-size: var(--s);
+		block-size: var(--s);
+		color: var(--clr-accent);
+		font-size: 2.6rem;
+		font-weight: 700;
+		border-radius: .6rem;
+		border: 1px solid var(--clr-accent);
+		transition: color var(--tr), background-color var(--tr);
+		&:hover, &:focus-visible, &.current{
+			color: white;
+			background-color: var(--clr-accent);
+			svg {
+				fill: #fff;
+			}
+		}		
+		svg {
+			inline-size: 1.5rem;
+			block-size: 2.6rem;
+			fill: var(--clr-accent);
+			transition: fill var(--tr);
+		}		
+		&.prev{
+			svg {
+				transform: scale(-1,1);
+			}
+		}
+	}
+}
+@media (max-width: 640px) {
+	.pagination{
+		gap: 1rem;
+		a{
+			--s: 4rem;
+			font-size: 2rem;
+			svg {
+				transform: scale(.8);
+			}
+		}
+	}
+}

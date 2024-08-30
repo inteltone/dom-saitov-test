@@ -1,0 +1,131 @@
+.header{
+	background-color: #fff;
+	&__top{		
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		inline-size: min(172rem, calc(100% - var(--gutter) * 2));
+		margin-inline: auto;
+		padding-block: 2.2rem;
+	}	
+	&__menu{
+		--gap: 7.8rem;
+		display: flex;
+		align-items: center;
+		gap: 0 var(--gap);
+		&-item{			
+			&:last-child{
+				margin-inline-start: calc(13.5rem - var(--gap));	
+			}
+		}
+		a{			
+			--pb: 1.6rem;
+			display: block;
+			inline-size: max-content;
+			padding-block: var(--pb);
+			font-size: clamp(1.6rem, 0.2593rem + 3.7037vw, 2rem);
+			text-transform: uppercase;
+		}
+	}
+	&__btm{
+		padding-inline: var(--gutter);
+		padding-block: 3.6rem 4.5rem;
+		background-color: var(--clr-gray);		
+	}
+}
+.burger{
+	--w: 4rem;
+	display: none;
+	position: relative;
+	inline-size: var(--w);
+	block-size: var(--w);
+	&::before,&::after{
+		content:'';
+		position: absolute;
+		inset-inline-start: 0;
+		inline-size: 100%;
+		block-size: .3rem;
+		background-color: var(--clr-dark);
+		border-radius: 100vw;
+		transform-origin: center;
+	}
+	&::before{
+		inset-block-start: 30%;
+	}
+	&::after{
+		inset-block-end: 30%;
+	}
+	&.close{
+		position: fixed;
+		inset-inline-end: 2rem;
+		inset-block-start: 2rem;
+		&::before{
+			inset-block-start: 50%;
+			transform: translateY(-50%) rotate(45deg);
+		}
+		&::after{
+			inset-block-start: 50%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.header{
+		&__top{
+			justify-content: start;
+			gap: 0 4rem;
+		}
+		&__menu{
+			gap: 0;
+			margin-inline-start: auto;
+			&-item{
+				&.add{
+					margin-inline-start: unset;
+				}
+			}
+			&-item:not(:last-child){
+				display: none;
+			}
+			&.active{
+				position: fixed;
+				inset-inline-start: 0;
+				inset-block-start: 0;
+				flex-direction: column;
+				justify-content: center;
+				inline-size: 100%;
+				block-size: 100vh;
+				background-color: #fff;
+				.header__menu-item:not(:last-child){
+					display: block;
+				}
+			}
+		}
+	}
+	.burger{
+		display: block;
+	}
+}
+@media (max-width: 640px) {
+	.header{
+		&__top{
+			flex-direction: column;
+			padding-block-start: unset;
+		}
+		&__menu{
+			justify-self: center;
+			margin-inline-start: unset;
+		}
+	}
+	.burger{
+		position: absolute;
+		inset-inline-end: 2rem;
+		inset-block-start: 2rem;
+	}
+}
+@media (max-width: 428px) {
+	.header{
+		&__btm{
+			padding-block: 2rem 2.4rem;
+		}
+	}
+}

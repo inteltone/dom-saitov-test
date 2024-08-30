@@ -1,0 +1,36 @@
+.what-wrap{
+	padding-block: clamp(4rem, 0.7955rem + 8.5227vw, 10rem);
+	background-color: var(--clr-yellow-light);
+}
+.what{
+	&__title{
+		margin-block-end: 3.8rem;
+	}
+	&__list{
+		display: grid;
+		grid-template-columns: repeat(2,1fr);
+		gap: 0 3rem;
+		&-item{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem 0;
+		}
+		&-img{
+			aspect-ratio: 1;
+			block-size: clamp(25.7rem, 20.7rem + 15.625vw, 36.7rem);
+			img{
+				block-size: 100%;
+				object-fit: contain;
+			}
+		}
+	}
+}
+@media (max-width: 1024px) {
+	.what{
+		&__list{
+			grid-template-columns: 1fr;
+			gap: 3rem 0;
+		}
+	}
+}

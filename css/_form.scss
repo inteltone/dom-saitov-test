@@ -1,0 +1,136 @@
+.form-wrap{
+	padding-block: 6rem;
+}
+.form-info{
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	margin-block-end: 6rem;
+	&__img{
+		min-inline-size: 8rem;
+		block-size: 7.2rem;
+		img{
+		}
+	}
+}
+.form{
+	--fz: clamp(1.6rem, 1rem + 1.875vw, 2.2rem);
+	display: grid;
+	margin-block-end: 2rem;
+	textarea{
+		min-block-size: 34.6rem;
+		resize: vertical;
+	}
+	&__section{
+		display: grid;
+		gap: 2.8rem 0;
+		inline-size: min(79.8rem, 100%);
+		margin-inline: auto;
+		&-item{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			font-size: var(--fz);
+			.price{
+				label{
+					display: block;
+					margin-block-end: 1.2rem;
+					
+				}
+				&__group{
+					display: flex;
+					align-items: center;
+					gap: 0 1.6rem;
+					span{
+						display: inline-block;
+						min-inline-size: max-content;
+					}
+				}
+			}
+			.service{
+				justify-self: end;
+				align-self: end;
+				display: flex;
+				align-items: center;
+				gap: 0 1.2rem;
+				block-size: 5.2rem;
+			}
+		}
+		.file{
+			display: grid;
+			place-items: center;
+			max-inline-size: 33.5rem;			
+			inline-size: 100%;			
+			block-size: 5.6rem;
+			color: var(--clr-accent);
+			font-size: 2rem;
+			font-weight: 600;
+			text-transform: uppercase;
+			border: 2px solid var(--clr-accent);
+			border-radius: 100vw;
+			cursor: pointer;
+			&__title{
+				margin-block-end: 1.2rem;
+				font-size: var(--fz);
+			}
+		}
+		.agreement{
+			display: flex;
+			gap: 2rem;
+			margin-block-end: 2.4rem;
+			p{
+				font-size: var(--fz);
+			}
+		}
+	}
+	.divider{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin-block: clamp(3rem, 0.7rem + 7.1875vw, 5.3rem);
+		span{
+			padding-inline: 2rem;
+			color: #4A585E;
+			background-color: var(--clr-accent-extra-light);
+			text-transform: uppercase;
+		}
+		&::before{
+			content:'';
+			position: absolute;
+			z-index: -1;
+			inset-inline-start: 0;
+			inset-block-start: 50%;
+			inline-size: 100%;
+			block-size: .1rem;
+			background-color: var(--clr-accent);
+		}
+	}
+	.btn{
+		justify-self: center;
+		max-inline-size: 33.5rem;
+		inline-size: 100%;
+	}
+}
+@media (max-width: 640px) {
+	.form{
+		&__section{
+			&-item{
+				grid-template-columns: 1fr;
+				.service{
+					justify-self: start;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 428px) {
+	.form-info{
+		&__img{
+			display: none;
+		}
+	}
+	.form{
+		textarea{
+			min-block-size: 15rem;
+		}
+	}
+}

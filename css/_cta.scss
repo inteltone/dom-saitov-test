@@ -1,0 +1,42 @@
+.cta-wrap{
+	padding-block: .9rem;
+	background-color: var(--clr-gray);
+}
+.cta{
+	display: flex;	
+	align-items: center;
+	gap: 0 3rem;
+	&__img{
+		aspect-ratio: 1.7355;
+		inline-size: clamp(15rem, 8.21rem + 5.8252vw, 21rem);
+		img{
+			block-size: 100%;
+		}
+	}
+	span{
+		color: #fff;
+		font-size: clamp(2.4rem, 1.1893rem + 1.5534vw, 4rem);
+		font-weight: 700;
+		text-align: center;
+	}
+	.btn{
+		margin-inline-start: auto;
+	}
+	
+}
+@media (max-width: 1350px) {
+	.cta{
+		flex-wrap: wrap;
+		justify-content: center;
+		.btn{
+			margin-inline-start: unset;
+		}
+	}
+}
+@media (max-width: 640px) {
+	.cta{
+		span{
+			margin-block-end: 2rem;
+		}
+	}
+}
