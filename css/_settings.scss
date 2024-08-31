@@ -12,6 +12,10 @@ body{
 	font-family: var(--ff-prim);
 	font-size: clamp(1.8rem, 1.5515rem + 1.2427vw, 2.6rem);	
 }
+main{
+	position: relative;
+	z-index: 0;
+}
 section{
 	& > * {
 		inline-size: min(var(--max-container), calc(100% - var(--gutter) * 2));

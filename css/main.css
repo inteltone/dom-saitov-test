@@ -54,6 +54,11 @@ body {
   font-size: clamp(1.8rem, 1.5515rem + 1.2427vw, 2.6rem);
 }
 
+main {
+  position: relative;
+  z-index: 0;
+}
+
 section > * {
   inline-size: min(var(--max-container), 100% - var(--gutter) * 2);
   margin-inline: auto;
@@ -328,6 +333,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 }
 
 .header {
+  position: relative;
+  z-index: 1;
   background-color: #fff;
 }
 .header__top {
